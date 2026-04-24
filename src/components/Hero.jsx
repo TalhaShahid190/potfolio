@@ -157,7 +157,7 @@ function handleCVDownload(e) {
           className="hero-left"
           style={{
             position: "relative", zIndex: 2,
-            display: "flex", flexDirection: "column", justifyContent: "flex-end",
+            display: "flex",alignItems:"center", flexDirection: "column", justifyContent: "flex-end",
             padding: "5rem 2.5rem 4.5rem",
             borderRight: "1px solid var(--line)",
           }}

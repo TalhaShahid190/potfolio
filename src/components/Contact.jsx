@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Row, Col } from "react-bootstrap";
-import { socialLinks, personalInfo } from "../data/data";
+import emailjs from "@emailjs/browser";
+import { socialLinks, personalInfo ,emaildata} from "../data/data";
 import SocialIcon from "./SocialIcon";
 
 // --------------------------------------------------
@@ -19,12 +20,27 @@ function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // Yahan apna form submission logic add karo
-    // jaise emailjs ya formspree
-    console.log("Form submitted:", form);
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
-    setForm({ name: "", email: "", message: "" });
+
+    emailjs
+      .send(
+        emaildata.serviceId, // EmailJS service ID
+        emaildata.templateId, // EmailJS template ID
+        {
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        },
+        emaildata.publicKey, // EmailJS public key
+      )
+      .then(() => {
+        setSent(true);
+        setTimeout(() => setSent(false), 4000);
+        setForm({ name: "", email: "", message: "" });
+      })
+      .catch((err) => {
+        console.error(err);
+        alert("Message send nahi hua — dobara try karo!");
+      });
   }
 
   return (
@@ -90,7 +106,9 @@ function SocialRow({ link }) {
           <div className="soc-handle">{link.handle}</div>
         </div>
       </div>
-      <span style={{ color: "var(--muted)", fontSize: "0.85rem" }}>&#8594;</span>
+      <span style={{ color: "var(--muted)", fontSize: "0.85rem" }}>
+        &#8594;
+      </span>
     </a>
   );
 }
@@ -137,11 +155,20 @@ function ContactForm({ form, sent, onChange, onSubmit }) {
         />
       </div>
 
-      <button type="submit" className="btn-warm" style={{ marginTop: "0.5rem" }}>
+      <button
+        type="submit"
+        className="btn-warm"
+        style={{ marginTop: "0.5rem" }}
+      >
         {sent ? "Message Sent!" : "Send Message"}
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M1 6l9-4-4 9-1.5-3.5L1 6z" stroke="currentColor"
-            strokeWidth="1.2" fill="none" strokeLinejoin="round" />
+          <path
+            d="M1 6l9-4-4 9-1.5-3.5L1 6z"
+            stroke="currentColor"
+            strokeWidth="1.2"
+            fill="none"
+            strokeLinejoin="round"
+          />
         </svg>
       </button>
     </form>

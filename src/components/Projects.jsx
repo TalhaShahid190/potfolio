@@ -45,7 +45,7 @@ function FeaturedCard({ project }) {
     <div className="proj-card">
       <Row className="align-items-center g-4">
         <Col md={7}>
-          <div className="proj-number">{project.id}</div>
+          <div className="proj-number"></div>
           <div style={{ marginBottom: "0.75rem" }}>
             {project.tags.map((tag) => (
               <span className="proj-tag" key={tag}>{tag}</span>
@@ -83,7 +83,7 @@ function FeaturedCard({ project }) {
 function SmallCard({ project }) {
   return (
     <div className="proj-card" style={{ height: "100%" }}>
-      <div className="proj-number" style={{ fontSize: "3rem" }}>{project.id}</div>
+      <div className="proj-number" style={{ fontSize: "3rem" }}></div>
       <div style={{ marginBottom: "0.75rem" }}>
         {project.tags.map((tag) => (
           <span className="proj-tag" key={tag}>{tag}</span>

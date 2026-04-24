@@ -14,7 +14,11 @@ export const personalInfo = {
   available: true,
   cvFile: "./public/Talha ShahidC V.pdf", // apna CV yahan rakh do public folder mein
 };
-
+export const emaildata = {
+  serviceId: "service_vcj665f", // EmailJS service ID
+  templateId: "template_lngf34q", // EmailJS template ID
+  publicKey: "hjMpLLYtLgIMINvZ4", // EmailJS public key
+};
 export const navLinks = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
@@ -40,10 +44,10 @@ export const skills = [
   { name: "MongoDB", level: "Advanced", dots: 4 },
   { name: "Express.js", level: "Advanced", dots: 5 },
   { name: "Tailwind CSS", level: "Advanced", dots: 4 },
-  { name: "Linux / Nginx", level: "Intermediate", dots: 3 },
+  { name: "Nginx", level: "Intermediate", dots: 3 },
   { name: "Java / OOP", level: "Intermediate", dots: 3 },
   { name: "Git / GitHub", level: "Advanced", dots: 4 },
-  { name: "SQL / Oracle", level: "Intermediate", dots: 3 },
+  { name: "Oracle", level: "Intermediate", dots: 3 },
 ];
 
 export const techBand = [
@@ -52,10 +56,9 @@ export const techBand = [
   "MongoDB",
   "Express.js",
   "VPS Deployment",
-  "Laravel",
+  "Bootstap",
   "Tailwind CSS",
   "Git & GitHub",
-  "Nginx + SSL",
   "Java OOP",
 ];
 
