@@ -79,14 +79,14 @@ function Contact() {
           </Col>
 
           {/* Right: Form */}
-          <Col md={6}>
+          {/* <Col md={6}>
             <ContactForm
               form={form}
               sent={sent}
               onChange={handleChange}
               onSubmit={handleSubmit}
             />
-          </Col>
+          </Col> */}
         </Row>
       </div>
     </section>
@@ -114,65 +114,65 @@ function SocialRow({ link }) {
 }
 
 // Contact form
-function ContactForm({ form, sent, onChange, onSubmit }) {
-  return (
-    <form onSubmit={onSubmit}>
-      <div className="cf-group">
-        <label className="cf-label">Full Name</label>
-        <input
-          className="cf-input"
-          type="text"
-          name="name"
-          placeholder="Your name"
-          value={form.name}
-          onChange={onChange}
-          required
-        />
-      </div>
+// function ContactForm({ form, sent, onChange, onSubmit }) {
+//   return (
+//     <form onSubmit={onSubmit}>
+//       <div className="cf-group">
+//         <label className="cf-label">Full Name</label>
+//         <input
+//           className="cf-input"
+//           type="text"
+//           name="name"
+//           placeholder="Your name"
+//           value={form.name}
+//           onChange={onChange}
+//           required
+//         />
+//       </div>
 
-      <div className="cf-group">
-        <label className="cf-label">Email Address</label>
-        <input
-          className="cf-input"
-          type="email"
-          name="email"
-          placeholder="your@email.com"
-          value={form.email}
-          onChange={onChange}
-          required
-        />
-      </div>
+//       <div className="cf-group">
+//         <label className="cf-label">Email Address</label>
+//         <input
+//           className="cf-input"
+//           type="email"
+//           name="email"
+//           placeholder="your@email.com"
+//           value={form.email}
+//           onChange={onChange}
+//           required
+//         />
+//       </div>
 
-      <div className="cf-group">
-        <label className="cf-label">Message</label>
-        <textarea
-          className="cf-input"
-          name="message"
-          placeholder="Tell me about your project..."
-          value={form.message}
-          onChange={onChange}
-          required
-        />
-      </div>
+//       <div className="cf-group">
+//         <label className="cf-label">Message</label>
+//         <textarea
+//           className="cf-input"
+//           name="message"
+//           placeholder="Tell me about your project..."
+//           value={form.message}
+//           onChange={onChange}
+//           required
+//         />
+//       </div>
 
-      <button
-        type="submit"
-        className="btn-warm"
-        style={{ marginTop: "0.5rem" }}
-      >
-        {sent ? "Message Sent!" : "Send Message"}
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path
-            d="M1 6l9-4-4 9-1.5-3.5L1 6z"
-            stroke="currentColor"
-            strokeWidth="1.2"
-            fill="none"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </button>
-    </form>
-  );
-}
+//       <button
+//         type="submit"
+//         className="btn-warm"
+//         style={{ marginTop: "0.5rem" }}
+//       >
+//         {sent ? "Message Sent!" : "Send Message"}
+//         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+//           <path
+//             d="M1 6l9-4-4 9-1.5-3.5L1 6z"
+//             stroke="currentColor"
+//             strokeWidth="1.2"
+//             fill="none"
+//             strokeLinejoin="round"
+//           />
+//         </svg>
+//       </button>
+//     </form>
+//   );
+// }
 
 export default Contact;
