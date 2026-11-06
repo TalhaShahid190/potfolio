@@ -35,12 +35,12 @@ function AppContent() {
 
         <div className="divider" />
         <About />
+        <div className="divider" />
+        <Projects />
 
         <div className="divider" />
         <Skills />
 
-        <div className="divider" />
-        <Projects />
 
         <div className="divider" />
         <Contact />
